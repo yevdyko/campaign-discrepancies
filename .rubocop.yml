@@ -1,0 +1,10 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - '.git/**/*'
+    - 'Gemfile'
+    - 'spec/spec_helper.rb'
+Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
