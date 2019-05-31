@@ -18,8 +18,6 @@ module CampaignDiscrepancies
 
     def call
       diff = HashDiff.diff(@local_state, @remote_state)
-      return [] if diff.empty?
-
       find_discrepancies(diff)
     end
 
