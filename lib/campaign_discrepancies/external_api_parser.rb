@@ -4,7 +4,7 @@ require_relative 'external_apis/ad_service'
 
 module CampaignDiscrepancies
   class ExternalApiParser
-    def self.call(response: CampaignDiscrepancies::ExternalApis::AdService.new.campaigns)
+    def self.call(response:)
       new(response: response).call
     end
 
@@ -13,14 +13,14 @@ module CampaignDiscrepancies
     end
 
     def call
-      response_body
+      parse_response_body
     rescue StandardError
       false
     end
 
     private
 
-    def response_body
+    def parse_response_body
       JSON.parse(@response.body)
     end
   end
